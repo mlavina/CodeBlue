@@ -18,8 +18,12 @@ public class OpeningScreen extends Activity {
 	
 	private static final long MINIMUM_DISTANCE_CHANGE_FOR_CHANGE_FOR_UPDATES = 1;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	private static final long MINIMUM_TIME_BETWEEN_UPDATES=1000*60;
 	
+=======
+	private static final long MINIMUM_TIME_BETWEEN_UPDATES=100;
+>>>>>>> 25154991e8ef92360b86d5fafdb839efe62e078b
 =======
 	private static final long MINIMUM_TIME_BETWEEN_UPDATES=100;
 >>>>>>> 25154991e8ef92360b86d5fafdb839efe62e078b
