@@ -16,7 +16,7 @@ import com.parse.ParseAnalytics;
 public class OpeningScreen extends Activity {
 	
 	private static final long MINIMUM_DISTANCE_CHANGE_FOR_CHANGE_FOR_UPDATES = 1;
-	private static final long MINIMUM_TIME_BETWEEN_UPDATES=100;
+	private static final long MINIMUM_TIME_BETWEEN_UPDATES=1000*60*2;
 	
 	protected LocationManager locationManager;
 	protected Button retrieveLocationButton;
@@ -27,10 +27,6 @@ public class OpeningScreen extends Activity {
 		Parse.initialize(this, "eocIqgaU4I25C7KpZhbinyr0sankzJeuRVOws2nT", "f5KktjOp6Gy6T6Ll69G5XfpgaD4Aaruc6LnJyVgR");
 		ParseAnalytics.trackAppOpened(getIntent());
 		setContentView(R.layout.activity_opening_screen);
-		
-		ParseObject testObject = new ParseObject("TestObject");
-		testObject.put("foo", "bar");
-		testObject.saveInBackground();
 		
 		retrieveLocationButton = (Button) findViewById(R.id.retrieve_location_button);
 		
@@ -48,6 +44,10 @@ public class OpeningScreen extends Activity {
 				showCurrentLocation();
 			}
 		});
+		
+		for(int i = 0; i<10; i++){
+			
+		}
 	}
 		protected void showCurrentLocation(){
 			Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
