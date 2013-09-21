@@ -1,4 +1,4 @@
-package com.example.codeblue;
+package com.example.codeblueresponder;
 
 import android.os.Bundle;
 import android.content.Context;
@@ -7,6 +7,11 @@ import android.app.Activity;
 import android.view.*;
 import android.view.View.OnClickListener;
 import android.widget.*;
+
+import com.example.codeblue.R;
+import com.parse.Parse;
+import com.parse.ParseObject;
+import com.parse.ParseAnalytics;
 
 public class OpeningScreen extends Activity {
 	
@@ -19,7 +24,13 @@ public class OpeningScreen extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		Parse.initialize(this, "eocIqgaU4I25C7KpZhbinyr0sankzJeuRVOws2nT", "f5KktjOp6Gy6T6Ll69G5XfpgaD4Aaruc6LnJyVgR");
+		ParseAnalytics.trackAppOpened(getIntent());
 		setContentView(R.layout.activity_opening_screen);
+		
+		ParseObject testObject = new ParseObject("TestObject");
+		testObject.put("foo", "bar");
+		testObject.saveInBackground();
 		
 		retrieveLocationButton = (Button) findViewById(R.id.retrieve_location_button);
 		
